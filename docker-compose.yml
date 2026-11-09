@@ -1,0 +1,12 @@
+services:
+  indra-ocr:
+    build: .
+    container_name: indra-ocr
+    ports:
+      - "8765:8765"
+    volumes:
+      - indra-models:/models
+    restart: unless-stopped
+
+volumes:
+  indra-models:

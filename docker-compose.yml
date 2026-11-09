@@ -8,5 +8,16 @@ services:
       - indra-models:/models
     restart: unless-stopped
 
+  indra-ocr-mcp:
+    build: .
+    container_name: indra-ocr-mcp
+    command: ["python", "/app/docker/mcp_server.py"]
+    ports:
+      - "8000:8000"
+    volumes:
+      - indra-models:/models
+      - ./documents:/documents:ro
+    restart: unless-stopped
+
 volumes:
   indra-models:

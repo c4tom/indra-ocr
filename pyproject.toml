@@ -16,6 +16,8 @@ dependencies = [
   "onnxruntime",
   "pypdfium2",
   "huggingface_hub",
+  "mcp[cli]",
+  "uvicorn",
 ]
 
 [project.urls]
